@@ -1,0 +1,14 @@
+@startuml LSP
+class Duck
+class ElectronicDuck
+class Pool
+class PoolElectronic
+Duck : quack()
+Duck : swim()
+ElectronicDuck : boolean _on
+ElectronicDuck : quack()
+ElectronicDuck : swim()
+
+Pool o-- Duck
+PoolElectronic o-- ElectronicDuck
+@enduml

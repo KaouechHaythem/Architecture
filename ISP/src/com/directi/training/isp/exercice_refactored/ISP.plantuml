@@ -1,0 +1,28 @@
+@startuml ISP
+interface Door
+interface ISensingDoor
+interface ITimedDoor
+class SensingDoor
+class TimedDoor
+class Timer
+class Sensor
+Door : + lock()
+Door : + unlock()
+Door : + open()
+Door : + close()
+ISensingDoor : + proximityCallBack()
+ITimedDoor : + timeoutCallBack()
+SensingDoor : - boolean _locked
+SensingDoor : - boolean _open
+TimedDoor : - int TIME_OUT
+TimedDoor : - boolean _locked
+TimedDoor : - boolean _open
+Sensor : + isPersonClose()
+SensingDoor --|> ISensingDoor
+SensingDoor --|> Door
+TimedDoor --|> ITimedDoor
+TimedDoor --|> Door
+Timer --> TimedDoor : "register"
+Sensor --> SensingDoor : "register"
+
+@enduml

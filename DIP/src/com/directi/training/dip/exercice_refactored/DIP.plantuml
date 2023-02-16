@@ -1,0 +1,19 @@
+@startuml DIP
+class EncodingModule
+class EncodingModuleClient
+class File 
+class MyDatabase 
+class NetworkAndDatabase 
+interface Source
+
+Source "many" <--  EncodingModule : encode
+Source <|-- File
+Source <|-- NetworkAndDatabase
+EncodingModuleClient o-- NetworkAndDatabase
+EncodingModuleClient o-- File
+EncodingModuleClient o-- EncodingModule
+EncodingModuleClient : + main()
+Source : + encode()
+MyDatabase : + write()
+MyDatabase : - int _count
+@enduml

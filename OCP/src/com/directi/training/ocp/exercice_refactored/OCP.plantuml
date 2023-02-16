@@ -1,0 +1,15 @@
+@startuml OCP
+interface Resource  
+class ResourceAloocator 
+class TimeResource
+class SpaceResource
+Resource : + markSlotFree(int resourceId)   
+Resource : + markSlotBusy(int resourceId)
+Resource : + findFreeSlot()
+
+Resource <|-- TimeResource
+Resource <|-- SpaceResource
+
+Resource  <-- ResourceAloocator : allocate , free
+
+@enduml

@@ -1,0 +1,12 @@
+@startuml exDIP
+class EncodingModule
+class EncodingModuleClient
+class MyDatabase 
+
+EncodingModule : + encodeWithFiles()
+EncodingModule : + encodeBasedOnNetworkAndDatabase()
+EncodingModuleClient o-- EncodingModule
+EncodingModuleClient : + main()
+MyDatabase : + write()
+MyDatabase : - int _count
+@enduml

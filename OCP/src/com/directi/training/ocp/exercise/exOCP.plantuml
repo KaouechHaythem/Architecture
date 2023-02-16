@@ -1,0 +1,17 @@
+@startuml OCP
+class RessourceAloocator 
+
+RessourceAloocator : int INVALID_RESOURCE_ID
+RessourceAloocator : allocate(ResourceType resourceType)
+RessourceAloocator : free(ResourceType resourceType)
+  RessourceAloocator :   markSpaceSlotFree(int resourceId)
+ RessourceAloocator :   markTimeSlotFree(int resourceId)
+ RessourceAloocator :  markSpaceSlotBusy(int resourceId)
+  
+ RessourceAloocator :  findFreeSpaceSlot()
+ RessourceAloocator :  markTimeSlotBusy(int resourceId)
+ RessourceAloocator :   findFreeTimeSlot()
+  
+  
+
+@enduml

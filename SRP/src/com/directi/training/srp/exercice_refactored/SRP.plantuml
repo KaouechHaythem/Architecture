@@ -1,0 +1,17 @@
+@startuml carUml
+class Car 
+class CarManager
+class CarRepo
+Car : - String _id  
+Car : - String _model 
+Car : - String _brand
+Car : + getId()
+Car : + getModel()
+Car : + getBrand()
+CarManager : + getBestCar()
+CarManager : + getCarsNames()
+CarManager : + getFromDb()
+CarRepo : + getCars()
+CarRepo o-- "many" Car
+CarManager --> CarRepo
+@enduml

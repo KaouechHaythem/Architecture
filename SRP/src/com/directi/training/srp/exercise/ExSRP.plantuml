@@ -1,0 +1,17 @@
+@startuml ExerciceSRPUml
+class Car 
+class CarManager
+
+Car : - String _id  
+Car : - String _model 
+Car : - String _brand
+Car : + getId()
+Car : + getModel()
+Car : + getBrand()
+CarManager : + getBestCar()
+CarManager : + getCarsNames()
+CarManager : + getFromDb()
+CarManager : + getCars()
+CarManager o-- "many" Car
+
+@enduml
